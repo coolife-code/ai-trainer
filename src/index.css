@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-terminal-bg text-terminal-green font-mono antialiased overflow-x-hidden selection:bg-terminal-green selection:text-terminal-bg;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-terminal-bg border-l border-terminal-gray;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-terminal-gray hover:bg-terminal-green;
+  }
+}
+
+@layer components {
+  .btn-brutal {
+    @apply relative border-2 border-terminal-green px-4 py-2 uppercase tracking-wider font-bold 
+           transition-all duration-200 hover:bg-terminal-green hover:text-terminal-bg 
+           active:translate-y-1 focus:outline-none focus:ring-2 focus:ring-terminal-green focus:ring-offset-2 focus:ring-offset-terminal-bg
+           disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-transparent disabled:hover:text-terminal-green;
+  }
+
+  .btn-brutal-red {
+    @apply relative border-2 border-terminal-red text-terminal-red px-4 py-2 uppercase tracking-wider font-bold 
+           transition-all duration-200 hover:bg-terminal-red hover:text-terminal-bg 
+           active:translate-y-1 focus:outline-none focus:ring-2 focus:ring-terminal-red focus:ring-offset-2 focus:ring-offset-terminal-bg;
+  }
+
+  .panel {
+    @apply border border-terminal-gray bg-black/50 p-4 sm:p-6 relative overflow-hidden backdrop-blur-sm;
+  }
+  
+  .glitch-overlay {
+    @apply absolute inset-0 pointer-events-none opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDUiLz4KPHJlY3QgeD0iMSIgeT0iMSIgd2lkdGg9IjIiIGhlaWdodD0iMiIgZmlsbD0iIzAwMCIgZmlsbC1vcGFjaXR5PSIwLjA1Ii8+Cjwvc3ZnPg==')];
+  }
+}
